@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__Claude_Preview__preview_start",
+      "Bash(curl -s http://localhost:8080)",
+      "Bash(kill 30191)",
+      "Read(//usr/local/**)",
+      "Read(//opt/homebrew/**)",
+      "Read(//usr/local/bin/**)",
+      "Read(//opt/homebrew/bin/**)",
+      "Bash(/usr/bin/ruby -e 'require \"webrick\"; puts \"webrick ok\"')",
+      "Bash(cp \"/Users/karim/Desktop/DROLLS WEBBSITE/.claude/serve.py\" /tmp/drolls_serve.py)",
+      "Bash(sips -g pixelWidth -g pixelHeight \"/Users/karim/Desktop/DROLLS WEBBSITE/Vibe for webbsite/IMG_9669.PNG\")",
+      "Bash(sips --cropOffset 290 0 --cropBox 1982 1206 \"/tmp/cup_work.png\")",
+      "Bash(sips -g pixelWidth -g pixelHeight \"/tmp/cup_work.png\")",
+      "mcp__Claude_in_Chrome__tabs_context_mcp",
+      "Bash(rsync -a --exclude='.git' --exclude='.claude' \"/Users/karim/Desktop/DROLLS WEBBSITE/\" /tmp/drolls-site/)",
+      "Bash(sips -s format jpeg \"/Users/karim/Desktop/DROLLS WEBBSITE/Top of webbsite pic.HEIC\" --out \"/Users/karim/Desktop/DROLLS WEBBSITE/top-of-website.jpg\")",
+      "Bash(grep -v \"^--$\")",
+      "Bash(sips -s format jpeg \"/Users/karim/Desktop/DROLLS WEBBSITE/Caterin pic.heic\" --out \"/Users/karim/Desktop/DROLLS WEBBSITE/images copy/catering-new.jpg\")",
+      "WebFetch(domain:www.iltalehti.fi)",
+      "WebFetch(domain:www.ts.fi)",
+      "Bash(sips -s format jpeg \"/Users/karim/Desktop/DROLLS WEBBSITE/New catering Pic.HEIC\" --out \"/Users/karim/Desktop/DROLLS WEBBSITE/images copy/catering-new.jpg\")",
+      "Skill(anthropic-skills:humanizer)",
+      "Skill(anthropic-skills:humanizer:*)",
+      "Bash(whois drolls.fi)"
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "DROLLS",
+      "runtimeExecutable": "/usr/bin/ruby",
+      "runtimeArgs": ["/Users/karim/Desktop/DROLLS WEBBSITE/.claude/server.rb"],
+      "port": 8080
+    }
+  ]
+}
