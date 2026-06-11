@@ -3,8 +3,8 @@
   "configurations": [
     {
       "name": "DROLLS",
-      "runtimeExecutable": "/usr/bin/ruby",
-      "runtimeArgs": ["/Users/karim/Desktop/DROLLS WEBBSITE/.claude/server.rb"],
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "8080", "-d", "/Users/karim/Desktop/Desktop - Karim’s MacBook Air/DROLLS WEBBSITE"],
       "port": 8080
     }
   ]

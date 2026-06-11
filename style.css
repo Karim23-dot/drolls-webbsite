@@ -1245,6 +1245,64 @@ button { border: none; background: none; cursor: pointer; font: inherit; }
   line-height: 1.7;
 }
 
+/* ---- Catering contact card (WhatsApp / Call) ---- */
+.biz-contact-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: clamp(0.5rem, 2vw, 1rem) 0;
+}
+.biz-contact-card__icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--brand-red), #FF9AB3);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-lg);
+  box-shadow: 0 12px 30px rgba(255,122,138,0.35);
+}
+.biz-contact-card__title {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 400;
+  color: #FF9AB3;
+  margin-bottom: 0.75rem;
+}
+.biz-contact-card__desc {
+  font-size: 0.95rem;
+  color: var(--grey-500);
+  line-height: 1.7;
+  margin-bottom: var(--space-xl);
+  max-width: 38ch;
+}
+.biz-contact-card__btn {
+  width: 100%;
+  justify-content: center;
+  gap: 0.6rem;
+  font-size: 1rem;
+  margin-bottom: 0.85rem;
+}
+.biz-contact-card__btn--whatsapp {
+  background: #25D366;
+  color: #fff;
+  border: none;
+}
+.biz-contact-card__btn--whatsapp:hover {
+  background: #1ebe5b;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(37,211,102,0.35);
+}
+.biz-contact-card__note {
+  text-align: center;
+  font-size: 0.72rem;
+  color: var(--grey-400);
+  margin-top: 0.4rem;
+}
+
 @media (max-width: 960px) {
   .biz-contact__layout { grid-template-columns: 1fr; gap: var(--space-xl); }
 }

@@ -168,37 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { passive: true });
   }
 
-  // ---- Business Contact Form ----
-  const bizForm = document.getElementById('bizForm');
-  const bizSuccess = document.getElementById('bizSuccess');
-  const bizSubmitBtn = document.getElementById('bizSubmitBtn');
-
-  if (bizForm) {
-    bizForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      bizSubmitBtn.disabled = true;
-      bizSubmitBtn.innerHTML = 'Lähetetään...';
-
-      try {
-        const response = await fetch(bizForm.action, {
-          method: 'POST',
-          body: new FormData(bizForm),
-          headers: { 'Accept': 'application/json' }
-        });
-
-        if (response.ok) {
-          bizForm.style.display = 'none';
-          bizSuccess.style.display = 'block';
-        } else {
-          throw new Error('server error');
-        }
-      } catch {
-        bizSubmitBtn.disabled = false;
-        bizSubmitBtn.innerHTML = 'Lähetä tarjouspyyntö <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';
-        alert('Virhe lähetyksessä. Ota yhteyttä sähköpostitse: info@drolls.fi');
-      }
-    });
-  }
+  // ---- Catering contact (WhatsApp / phone buttons — no JS needed) ----
 
   // ---- Keyboard Accessibility ----
   document.addEventListener('keydown', (e) => {
