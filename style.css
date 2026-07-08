@@ -1701,7 +1701,7 @@ button { border: none; background: none; cursor: pointer; font: inherit; }
 }
 .footer__top {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
   gap: 2rem;
   margin-bottom: var(--space-2xl);
 }
@@ -1755,6 +1755,24 @@ button { border: none; background: none; cursor: pointer; font: inherit; }
 .footer__address { font-size: 0.85rem; color: rgba(255,255,255,0.35); margin-top: 0.5rem; }
 .footer__ytunnus { font-size: 0.95rem; color: rgba(255,255,255,0.6); margin-top: 0.5rem; }
 
+.footer__oiva {
+  display: block;
+  width: 90px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.12);
+  transition: border-color var(--t-fast), transform var(--t-fast);
+}
+.footer__oiva:hover {
+  border-color: var(--neon-blue);
+  transform: translateY(-2px);
+}
+.footer__oiva-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .footer__bottom {
   display: flex;
   align-items: center;
@@ -1776,6 +1794,7 @@ button { border: none; background: none; cursor: pointer; font: inherit; }
 @media (max-width: 480px) {
   .footer__top { grid-template-columns: 1fr; }
   .footer__bottom { flex-direction: column; text-align: center; }
+  .footer__oiva { width: 90px; }
 }
 
 /* ============================
