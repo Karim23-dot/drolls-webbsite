@@ -1177,6 +1177,44 @@ button { border: none; background: none; cursor: pointer; font: inherit; }
   flex-direction: column;
   gap: 1.1rem;
 }
+.biz-form__header {
+  margin-bottom: var(--space-lg);
+}
+.biz-form__eyebrow {
+  display: inline-block;
+  margin-bottom: 0.55rem;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--brand-red);
+}
+.biz-form__header h3 {
+  max-width: 20ch;
+  margin-bottom: 0.65rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.7rem, 3vw, 2.25rem);
+  font-weight: 400;
+  line-height: 1.05;
+  color: #FF9AB3;
+}
+.biz-form__header p {
+  max-width: 48ch;
+  font-size: 0.88rem;
+  line-height: 1.65;
+  color: var(--grey-500);
+}
+.biz-form__honeypot {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
 .biz-form__row {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1193,6 +1231,14 @@ button { border: none; background: none; cursor: pointer; font: inherit; }
   letter-spacing: 0.07em;
   text-transform: uppercase;
   color: var(--grey-500);
+}
+.biz-form__optional {
+  margin-left: 0.35rem;
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  text-transform: none;
+  color: var(--grey-400);
 }
 .biz-form__field input,
 .biz-form__field select,
@@ -1246,7 +1292,43 @@ button { border: none; background: none; cursor: pointer; font: inherit; }
 .biz-form__note {
   text-align: center;
   font-size: 0.72rem;
+  line-height: 1.55;
   color: var(--grey-400);
+}
+.biz-form__status {
+  display: none;
+  margin: 0;
+  padding: 0.75rem 0.9rem;
+  border-radius: var(--r-md);
+  font-size: 0.78rem;
+  line-height: 1.5;
+  text-align: center;
+}
+.biz-form__status.is-error {
+  display: block;
+  color: #8c2f3e;
+  background: #fff0f3;
+  border: 1px solid #ffc4cf;
+}
+.biz-form__alternatives {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding-top: 0.1rem;
+  font-size: 0.75rem;
+  color: var(--grey-500);
+}
+.biz-form__alternatives a {
+  color: var(--brand-red);
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+.biz-form__alternatives a:hover {
+  color: var(--charcoal);
 }
 
 .biz-form__success {

@@ -168,7 +168,63 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { passive: true });
   }
 
-  // ---- Catering contact (WhatsApp / phone buttons — no JS needed) ----
+  // ---- Catering inquiry form ----
+  const cateringForm = document.getElementById('cateringForm');
+  const cateringDate = document.getElementById('catering-date');
+
+  if (cateringDate) {
+    const today = new Date();
+    const localToday = new Date(today.getTime() - today.getTimezoneOffset() * 60000)
+      .toISOString()
+      .split('T')[0];
+    cateringDate.min = localToday;
+  }
+
+  if (cateringForm) {
+    const submitButton = cateringForm.querySelector('[type="submit"]');
+    const submitText = cateringForm.querySelector('.biz-form__submit-text');
+    const formStatus = document.getElementById('cateringFormStatus');
+    const successPanel = document.getElementById('cateringFormSuccess');
+    const defaultSubmitText = submitText.textContent;
+
+    cateringForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+
+      if (!cateringForm.checkValidity()) {
+        cateringForm.reportValidity();
+        return;
+      }
+
+      submitButton.disabled = true;
+      submitButton.setAttribute('aria-busy', 'true');
+      submitText.textContent = 'Lähetetään…';
+      formStatus.className = 'biz-form__status';
+      formStatus.textContent = '';
+
+      try {
+        const response = await fetch(cateringForm.action, {
+          method: 'POST',
+          body: new FormData(cateringForm),
+          headers: { Accept: 'application/json' }
+        });
+
+        if (!response.ok) {
+          throw new Error('Form submission failed');
+        }
+
+        cateringForm.reset();
+        cateringForm.style.display = 'none';
+        successPanel.style.display = 'block';
+      } catch (error) {
+        formStatus.textContent = 'Viestin lähettäminen ei onnistunut. Yritä uudelleen tai ota yhteyttä WhatsAppissa.';
+        formStatus.className = 'biz-form__status is-error';
+      } finally {
+        submitButton.disabled = false;
+        submitButton.removeAttribute('aria-busy');
+        submitText.textContent = defaultSubmitText;
+      }
+    });
+  }
 
   // ---- Keyboard Accessibility ----
   document.addEventListener('keydown', (e) => {

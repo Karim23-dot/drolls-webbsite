@@ -401,7 +401,7 @@
             Tee tapahtumastasi <span class="text-accent">unohtumaton</span>
           </h2>
           <p class="catering-merged__desc anim" data-anim="fade-up" data-delay="2">
-            DROLLS tuo live-rullajäätelöelämyksen suoraan tapahtumaan. Soita tai laita viesti WhatsAppissa niin teemme teille räätälöidyn tarjouksen.
+            DROLLS tuo live-rullajäätelöelämyksen suoraan tapahtumaan. Täytä lomake, soita tai laita viesti WhatsAppissa, niin teemme teille räätälöidyn tarjouksen.
           </p>
           <ul class="biz-perks catering-merged__perks anim" data-anim="fade-up" data-delay="3">
             <li class="biz-perk">
@@ -443,7 +443,86 @@
 
         <!-- Center: form card -->
         <div class="biz-contact__form-wrap catering-merged__form anim" data-anim="fade-up" data-delay="2">
-          <div class="biz-contact-card">
+          <div class="biz-form__header">
+            <span class="biz-form__eyebrow">Pyydä tarjous</span>
+            <h3>Suunnitellaan teille täydellinen jäätelöelämys</h3>
+            <p>Kerro tapahtumastasi, niin palaamme asiaan räätälöidyn tarjouksen kanssa.</p>
+          </div>
+
+          <form class="biz-form" id="cateringForm" action="https://formspree.io/f/mdajoowd" method="POST">
+            <input type="hidden" name="subject" value="Uusi catering-kysely DROLLS.fi-sivustolta">
+            <div class="biz-form__honeypot" aria-hidden="true">
+              <label for="catering-company-site">Jätä tämä kenttä tyhjäksi</label>
+              <input id="catering-company-site" type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+            </div>
+
+            <div class="biz-form__row">
+              <div class="biz-form__field">
+                <label for="catering-name">Nimi <span aria-hidden="true">*</span></label>
+                <input id="catering-name" name="Nimi" type="text" autocomplete="name" placeholder="Etunimi Sukunimi" required>
+              </div>
+              <div class="biz-form__field">
+                <label for="catering-email">Sähköposti <span aria-hidden="true">*</span></label>
+                <input id="catering-email" name="email" type="email" autocomplete="email" placeholder="nimi@esimerkki.fi" required>
+              </div>
+            </div>
+
+            <div class="biz-form__row">
+              <div class="biz-form__field">
+                <label for="catering-phone">Puhelinnumero <span class="biz-form__optional">Valinnainen</span></label>
+                <input id="catering-phone" name="Puhelinnumero" type="tel" autocomplete="tel" placeholder="040 123 4567">
+              </div>
+              <div class="biz-form__field">
+                <label for="catering-date">Tapahtumapäivä <span class="biz-form__optional">Valinnainen</span></label>
+                <input id="catering-date" name="Tapahtumapäivä" type="date">
+              </div>
+            </div>
+
+            <div class="biz-form__row">
+              <div class="biz-form__field">
+                <label for="catering-location">Paikkakunta <span class="biz-form__optional">Valinnainen</span></label>
+                <input id="catering-location" name="Paikkakunta" type="text" autocomplete="address-level2" placeholder="Esim. Turku">
+              </div>
+              <div class="biz-form__field">
+                <label for="catering-guests">Vierasmäärä <span class="biz-form__optional">Valinnainen</span></label>
+                <input id="catering-guests" name="Vierasmäärä" type="number" inputmode="numeric" min="1" placeholder="Esim. 80">
+              </div>
+            </div>
+
+            <div class="biz-form__field">
+              <label for="catering-message">Kerro tapahtumasta <span aria-hidden="true">*</span></label>
+              <textarea id="catering-message" name="Viesti" rows="4" placeholder="Kerro esimerkiksi tapahtuman tyypistä, paikasta ja erityistoiveista." required></textarea>
+            </div>
+
+            <button class="btn btn--primary btn--lg biz-form__submit" type="submit">
+              <span class="biz-form__submit-text">Lähetä tarjouspyyntö</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </button>
+
+            <p class="biz-form__status" id="cateringFormStatus" role="status" aria-live="polite"></p>
+            <p class="biz-form__note">Lomakkeen käyttö on vapaaehtoista. Tiedot välitetään Formspree-palvelun kautta ja niitä käytetään vain catering-kyselyysi vastaamiseen.</p>
+
+            <div class="biz-form__alternatives">
+              <span>Voit myös ottaa yhteyttä:</span>
+              <a href="https://wa.me/358405683399" target="_blank" rel="noopener">WhatsApp</a>
+              <span aria-hidden="true">·</span>
+              <a href="tel:+358405683399">040 568 3399</a>
+            </div>
+          </form>
+
+          <div class="biz-form__success" id="cateringFormSuccess" role="status" aria-live="polite">
+            <div class="biz-success__icon">
+              <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M20 6L9 17l-5-5"/>
+              </svg>
+            </div>
+            <h3>Kiitos tarjouspyynnöstä!</h3>
+            <p>Viestisi on lähetetty onnistuneesti. Palaamme asiaan mahdollisimman pian.</p>
+          </div>
+
+          <template>
             <div class="biz-contact-card__icon">
               <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
@@ -467,7 +546,7 @@
             </a>
 
             <p class="biz-contact-card__note">Vastaamme arkisin nopeasti</p>
-          </div>
+          </template>
         </div>
 
         <!-- Right: catering gallery -->
